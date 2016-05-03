@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
+                @Html.ActionLink("Hem", "Index", "Home", new { area = "" },  new { @class = "navbar-brand", id= "nav_link_home" } )
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("CV", "Cv", "Home")</li>
+                    <li>@Html.ActionLink("Kurser", "Kurser", "Home")</li>
+                    <li>@Html.ActionLink("Github", "Github", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div id="footer_content">
+                <a href="https://github.com/Tjorvel" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/benjamin-gustafsson-026538114?trk=hp-identity-name" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                <a href="https://twitter.com/Tjorvel" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="https://www.twitch.tv/tjorvel" target="_blank"><i class="fa fa-twitch fa-2x"></i></a>
+            </div>
+            <p> @DateTime.Now.ToString("MMMM dd, yyyy").ToUpper()- Benjamin Gustafsson</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
